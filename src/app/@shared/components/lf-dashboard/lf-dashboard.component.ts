@@ -109,7 +109,7 @@ export class LfDashboardComponent implements OnInit {
   }
 
   openProfile(Id): void {
-    const url = `https://organic.dating/settings/view-profile/${Id}`;
+    const url = `https://pussy.ventures/settings/view-profile/${Id}`;
     window.open(url, '_blank');
   }
 

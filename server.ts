@@ -78,14 +78,14 @@ export function app(): express.Express {
         }
         const params = req.params[0];
         var seo: any = {
-          title: 'Dating tube',
+          title: 'Pussy Ventures tube',
           description:
             'Find like minded male or female unvaccinated organic humans!',
           image:
-            'https://tube.organic.dating/assets/Healing-Tube-Logo.jpg',
-          site: 'https://tube.organic.dating/',
-          url: 'https://tube.organic.dating' + params,
-          keywords: 'DatingTube',
+            'https://tube.pussy.ventures/assets/Healing-Tube-Logo.jpg',
+          site: 'https://tube.pussy.ventures/',
+          url: 'https://tube.pussy.ventures' + params,
+          keywords: 'PussyVenturestube',
         };
         if (
           params.indexOf('channel/') > -1
@@ -128,7 +128,7 @@ export function app(): express.Express {
           const talent = {
             name: post?.title || post?.albumname || 'Healing.Tube Post',
             description: pdhtml?.textContent || 'Post content',
-            image: post?.thumbfilename || post?.metaimage || post?.imageUrl || 'https://tube.organic.dating/assets/Healing-Tube-Logo.jpg',
+            image: post?.thumbfilename || post?.metaimage || post?.imageUrl || 'https://tube.pussy.ventures/assets/Healing-Tube-Logo.jpg',
           };
           seo.title = talent.name;
           seo.description = strip_html_tags(talent.description);
