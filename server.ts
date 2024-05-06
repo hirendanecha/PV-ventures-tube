@@ -126,7 +126,7 @@ export function app(): express.Express {
           const pdhtml = document.createElement('div');
           pdhtml.innerHTML = post?.postdescription || post?.metadescription;
           const talent = {
-            name: post?.title || post?.albumname || 'Healing.Tube Post',
+            name: post?.title || post?.albumname || 'Pussy.ventures Post',
             description: pdhtml?.textContent || 'Post content',
             image: post?.thumbfilename || post?.metaimage || post?.imageUrl || 'https://tube.pussy.ventures/assets/Healing-Tube-Logo.jpg',
           };
