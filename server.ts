@@ -78,7 +78,7 @@ export function app(): express.Express {
         }
         const params = req.params[0];
         var seo: any = {
-          title: 'Pussy Ventures tube',
+          title: 'PussyVentures.tube',
           description:
             'Find like minded male or female unvaccinated organic humans!',
           image:

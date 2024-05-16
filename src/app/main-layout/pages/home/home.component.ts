@@ -44,8 +44,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private socketService: SocketService,
     private authService: AuthService,
     private shareService: ShareService,
-    // private seoService: SeoService,
-    private seoService:SeoService,
+    private seoService: SeoService,
   ) {
     this.profileId = JSON.parse(this.authService.getUserData() as any)?.Id;
     this.userId = JSON.parse(this.authService.getUserData() as any)?.UserID;
@@ -118,7 +117,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
           // localStorage.setItem('channelId', this.channelData.id);
           // console.log(this.channelData);
           const data = {
-            title: `Pussy Ventures ${this.channelData?.firstname}`,
+            title: `PussyVentures.tube ${this.channelData?.firstname}`,
             url: `${location.href}`,
             description: '',
           };
@@ -139,7 +138,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         if (res.data.length) {
           this.channelData = res.data[0];
           const data = {
-            title: `Pussy Ventures ${this.channelData.firstname}`,
+            title: `PussyVentures.tube ${this.channelData.firstname}`,
             url: `${location.href}`,
             description: '',
           };
@@ -236,7 +235,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   onSearchData(searchText: string) {
     console.log(searchText);
     this.searchText = searchText;
-    
 
 
 
