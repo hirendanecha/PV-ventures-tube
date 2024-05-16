@@ -80,12 +80,12 @@ export function app(): express.Express {
         var seo: any = {
           title: 'PussyVentures.tube',
           description:
-            'Find like minded male or female unvaccinated organic humans!',
+            'Live Girls! Talk One-on-One Face-to-Face!',
           image:
             'https://tube.pussy.ventures/assets/Healing-Tube-Logo.jpg',
           site: 'https://tube.pussy.ventures/',
           url: 'https://tube.pussy.ventures' + params,
-          keywords: 'PussyVenturestube',
+          keywords: 'Pussy.ventures tube',
         };
         if (
           params.indexOf('channel/') > -1

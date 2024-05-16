@@ -69,7 +69,7 @@ export class SeoService {
     }
 
     if (!tagValue.image) {
-      tagValue.image = 'https://tube.pussy.ventures/assets/Healing-Tube-Logo.jpg';
+      tagValue.image = 'https://tube.pussy.ventures/assets/meta.png';
     }
 
     this.meta.updateTag({
