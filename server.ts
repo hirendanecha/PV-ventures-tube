@@ -82,7 +82,7 @@ export function app(): express.Express {
           description:
             'Live Girls! Talk One-on-One Face-to-Face!',
           image:
-            'https://tube.pussy.ventures/assets/Healing-Tube-Logo.jpg',
+            'https://tube.pussy.ventures/assets/meta.png',
           site: 'https://tube.pussy.ventures/',
           url: 'https://tube.pussy.ventures' + params,
           keywords: 'Pussy.ventures tube',
@@ -128,7 +128,7 @@ export function app(): express.Express {
           const talent = {
             name: post?.title || post?.albumname || 'Pussy.ventures Post',
             description: pdhtml?.textContent || 'Post content',
-            image: post?.thumbfilename || post?.metaimage || post?.imageUrl || 'https://tube.pussy.ventures/assets/Healing-Tube-Logo.jpg',
+            image: post?.thumbfilename || post?.metaimage || post?.imageUrl || 'https://tube.pussy.ventures/assets/meta.png',
           };
           seo.title = talent.name;
           seo.description = strip_html_tags(talent.description);
