@@ -386,7 +386,6 @@ export class VideoPostModalComponent implements OnInit, AfterViewInit {
   onChangeTag(event) {
     this.postData.keywords = event.target.value.replaceAll(' ', ',');
   }
-
   selectChannel(channelId): void {
     this.channelId = channelId;
     console.log(this.channelId);

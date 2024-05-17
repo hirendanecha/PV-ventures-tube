@@ -40,17 +40,29 @@
       </div>
       <div class="col-12 mb-5">
         <label class="form-label d-flex"
-          >Video Title(max 50 characters)<span class="text-danger"
-            >*</span
-          ></label
+          >Select Channel<span class="text-danger">*</span></label
         >
-        <input
+        <!-- <select
           type="text"
           class="form-control"
           name="albumname"
-          [(ngModel)]="postData.albumname"
           placeholder="Enter your video title"
-        />
+        >
+          <option value="" *ngFor="let channel of channelList">
+            <span>{{ channel.firstname }}</span>
+          </option>
+        </select> -->
+        <select
+          id="channel"
+          required
+          name="channel"
+          class="form-control w-100"
+          (change)="selectChannel($event.target.value)"
+        >
+          <option [value]="channel?.id" *ngFor="let channel of channelList">
+            <span>{{ channel.firstname }}</span>
+          </option>
+        </select>
       </div>
       <div class="col-12 mb-3">
         <label class="form-label d-flex"

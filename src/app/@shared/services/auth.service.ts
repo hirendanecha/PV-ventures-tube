@@ -145,6 +145,7 @@ export class AuthService {
   getUserData() {
     return localStorage.getItem('authUser');
   }
+
   verifyToken(token): Observable<any> {
     return this.http.get(
       `${environment.apiUrl}customers/verify-token/${token}`

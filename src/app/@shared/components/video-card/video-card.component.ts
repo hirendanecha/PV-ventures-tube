@@ -42,7 +42,6 @@ export class VideoCardComponent implements OnInit, AfterViewInit {
       }
     });
   }
-
   isIncluded(channelId: number): boolean {
     return this.includedChannels?.includes(channelId);
   }
