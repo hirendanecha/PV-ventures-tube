@@ -72,6 +72,7 @@ export class VideoComponent implements OnInit, OnChanges {
   activePage: number;
   commentMessageTags = [];
   commentMessageInputValue: string = '';
+  isTheaterModeOn: boolean = false;
   constructor(
     private commonService: CommonService,
     private router: Router,
@@ -233,11 +234,21 @@ export class VideoComponent implements OnInit, OnChanges {
       this.player = jwplayer('jwVideo-' + id).setup({
         ...config,
       });
+      const isPhoneView = window.innerWidth <= 768;
+      if (!isPhoneView) {    
+        const buttonId = 'theater-mode-button';
+        const iconPath = 'assets/img/theater-mode.png';
+        const tooltipText = 'Theater Mode';
+        jwplayer('jwVideo-' + id).addButton(iconPath, tooltipText, this.buttonClickAction.bind(this), buttonId);
+      }
       this.player.load();
       console.log('>>>>>', this.player);
 
       if (this.player) clearInterval(i);
     }, 1000);
+  }
+  buttonClickAction() {
+    this.isTheaterModeOn = !this.isTheaterModeOn
   }
 
   onPostFileSelect(event: any, type: string): void {
@@ -541,7 +552,7 @@ export class VideoComponent implements OnInit, OnChanges {
   // }
 
   editComment(comment): void {
-    if (comment.parentCommentId) {
+    if (comment) {
       const modalRef = this.modalService.open(ReplyCommentModalComponent, {
         centered: true,
       });
@@ -557,7 +568,9 @@ export class VideoComponent implements OnInit, OnChanges {
           this.commentData.postId = res?.postId;
           this.commentData.profileId = res?.profileId;
           this.commentData['id'] = res?.id;
-          this.commentData.parentCommentId = res?.parentCommentId;
+          if (res?.parentCommentId) {
+            this.commentData.parentCommentId = res?.parentCommentId;
+          }
           this.addComment();
         }
       });

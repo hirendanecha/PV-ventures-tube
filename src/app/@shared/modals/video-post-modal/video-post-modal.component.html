@@ -12,19 +12,31 @@
 
   <div class="modal-body text-center">
     <form class="form-dark row" ngNativeValidate autocomplete="off">
-      <div class="col-12 mb-5">
+      <div class="col-12 mb-5" *ngIf="!postData?.id">
         <label class="form-label d-flex"
-          >Video Title(max 50 characters)<span class="text-danger"
-            >*</span
-          ></label
+          >Select Channel<span class="text-danger">*</span></label
         >
-        <input
+        <!-- <select
           type="text"
           class="form-control"
           name="albumname"
-          [(ngModel)]="postData.albumname"
           placeholder="Enter your video title"
-        />
+        >
+          <option value="" *ngFor="let channel of channelList">
+            <span>{{ channel.firstname }}</span>
+          </option>
+        </select> -->
+        <select
+          id="channel"
+          required
+          name="channel"
+          class="form-control w-100"
+          (change)="selectChannel($event.target.value)"
+        >
+          <option [value]="channel?.id" *ngFor="let channel of channelList">
+            <span>{{ channel.firstname }}</span>
+          </option>
+        </select>
       </div>
       <div class="col-12 mb-3">
         <label class="form-label d-flex"
@@ -79,16 +91,21 @@
 
       <div class="col-6 mb-5 d-grid">
         <label class="form-label d-flex"
-          >Video<span class="text-danger">*</span><span class="d-none d-sm-block ms-2">(Max. video size allowed is 2 GB)</span></label
+          >Video<span class="text-danger">*</span
+          ><span class="d-none d-sm-block ms-2"
+            >(Max. video size allowed is 10 GB)</span
+          ></label
         >
         <div class="d-flex" *ngIf="!selectedVideoFile">
           <div class="d-flex align-items-center">
-          <fa-icon
+            <fa-icon
             [icon]="['fas', 'file-upload']"
             class="text-primary cursor font-24-px"
             (click)="uploadVideo.click()"
           />
-          <div class="ms-2" *ngIf="fileSizeError">Please select another file to upload</div>
+          <div class="ms-2" *ngIf="fileSizeError">
+            Please select another file to upload
+          </div>
         </div>
         <input
           #uploadVideo
@@ -135,7 +152,13 @@
     </form>
   </div>
 
-  <div class="modal-footer" [ngClass]="{'justify-content-between': postData.id, 'justify-content-end': !postData.id}">
+  <div
+  class="modal-footer"
+  [ngClass]="{
+    'justify-content-between': postData.id,
+    'justify-content-end': !postData.id
+  }"
+>
     <div *ngIf="postData.id">
       <button
         type="button"

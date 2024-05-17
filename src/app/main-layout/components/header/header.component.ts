@@ -47,7 +47,7 @@ export class HeaderComponent implements OnInit {
   myAccountNavigation(): void {
     const id = this.shareService.userDetails.Id
     // location.href = `https://freedom.buzz/settings/view-profile/${id}`;
-    const url = `https://pussy.ventures/settings/view-profile/${id}`;
+    const url = `https://flatearth.dating/settings/view-profile/${id}`;
     window.open(url, "_blank");
   }
 
@@ -84,15 +84,18 @@ export class HeaderComponent implements OnInit {
     modalRef.componentInstance.title = `Upload Video`;
     modalRef.componentInstance.confirmButtonLabel = 'Upload Video';
     modalRef.componentInstance.cancelButtonLabel = 'Cancel';
-    modalRef.result.then(res => {
-      console.log(res)
-    })
+    modalRef.result.then((res) => {
+      console.log(res);
+    });
   }
 
   openNotificationsModal(): void {
-    this.userMenusOverlayDialog = this.modalService.open(NotificationsModalComponent, {
-      keyboard: true,
-      modalDialogClass: 'notifications-modal',
-    });
+    this.userMenusOverlayDialog = this.modalService.open(
+      NotificationsModalComponent,
+      {
+        keyboard: true,
+        modalDialogClass: 'notifications-modal',
+      }
+    );
   }
 }

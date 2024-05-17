@@ -18,6 +18,8 @@ export class ReplyCommentModalComponent implements AfterViewInit {
     url: '',
     tags: []
   };
+  selectedImage = ''
+
 
   commentMessageInputValue: string = ''
   commentMessageTags: any[];
@@ -33,7 +35,7 @@ export class ReplyCommentModalComponent implements AfterViewInit {
       this.commentData.parentCommentId = this.data.parentCommentId
       this.commentData.postId = this.data.postId
       this.commentData.profileId = this.data.profileId
-      this.commentData['imageUrl'] = this.data?.imageUrl
+      this.selectedImage['imageUrl'] = this.data?.imageUrl
     }
   }
 

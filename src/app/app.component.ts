@@ -9,7 +9,7 @@ import {environment} from 'src/environments/environment'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, AfterViewInit {
 
@@ -21,7 +21,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     private authService: AuthService,
     private commonService: CommonService,
     private cookieService: CookieService
-  ) { }
+  ) {}
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
