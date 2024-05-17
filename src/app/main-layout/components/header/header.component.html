@@ -19,12 +19,12 @@
     <ul
       class="navbar-nav d-none d-sm-flex flex-row justify-content-around align-self-center ms-auto m-lg-auto gap-3 gap-xl-20 gap-lg-10 py-0 nav-btn"
     >
-      <li title="Pussy.ventures Home" class="cursor">
+      <li title="PussyVentures Home" class="cursor">
         <a href="https://pussy.ventures/home" target="_blank">
           <fa-icon [icon]="['fas', 'house']" class="font-24-px" />
         </a>
       </li>
-      <li title="Pussy.ventures Research" class="cursor">
+      <li title="PussyVentures Research" class="cursor">
         <a href="https://pussy.ventures/research" target="_blank">
           <fa-icon [icon]="['fas', 'book-open']" class="font-24-px mx-sm-5" />
         </a>
@@ -66,7 +66,7 @@
               loading="lazy"
               onerror="this.onerror=null;this.src='assets/profile.png';"
             />
-            <!-- {{ shareService.userDetails?.Username }} -->
+            <!-- {{ shareService.userDetails?.userName }} -->
             <div class="c-header-name">
               {{
                 shareService?.userChannelName
@@ -95,7 +95,7 @@
                 [icon]="['fas', 'user']"
                 [fixedWidth]="true"
               />
-              &nbsp; Pussy.ventures Profile
+              &nbsp; PussyVentures Profile
             </button>
             <!-- <button ngbDropdownItem>
             <fa-icon [icon]="['fas', 'video']" [fixedWidth]="true" />

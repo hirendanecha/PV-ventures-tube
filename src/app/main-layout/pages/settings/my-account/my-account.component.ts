@@ -17,9 +17,9 @@ export class MyAccountComponent {
   apiUrl = environment.apiUrl + 'channels';
   channelData: any = [];
   channelList:any=[];
-  countChannel:number;
   activePage = 0;
   channelId: number;
+  countChannel:number;
   hasMoreData = false;
   postedVideoCount: number;
   userChannelCount: number;
@@ -27,13 +27,14 @@ export class MyAccountComponent {
     private commonService: CommonService,
     private spinner: NgxSpinnerService,
     private authService:AuthService,
-    public shareService: ShareService
+    public shareService: ShareService,
   ) {
     this.channelId = +localStorage.getItem('channelId');
     this.userData = JSON.parse(localStorage.getItem('authUser'));
   }
 
   ngOnInit(): void {
+    // console.log("h",this.channelData);
     this.getChannels();
     this.getPostVideosById();
     this.getChannelByUserId();

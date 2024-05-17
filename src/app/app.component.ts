@@ -4,7 +4,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from './@shared/services/auth.service';
 import { CommonService } from './@shared/services/common.service';
 import { CookieService } from 'ngx-cookie-service';
-import {environment} from 'src/environments/environment'
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,6 @@ import {environment} from 'src/environments/environment'
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, AfterViewInit {
-
   isShowScrollTopBtn: boolean = false;
 
   constructor(

@@ -36,7 +36,6 @@ export class VideoPostModalComponent implements OnInit, AfterViewInit {
   @Input() data: any;
   @Input() communityId: any;
   @Input() channelList: any = [];
-
   postData: any = {
     id: null,
     profileid: null,
@@ -65,7 +64,6 @@ export class VideoPostModalComponent implements OnInit, AfterViewInit {
 
   streamnameProgress = 0;
   thumbfilenameProgress = 0;
-
   fileSizeError = false;
 
   constructor(
@@ -83,9 +81,7 @@ export class VideoPostModalComponent implements OnInit, AfterViewInit {
     )?.Id;
     // console.log('profileId', this.postData.profileid);
     // console.log('editData', this.data);
-
     this.channelId = +localStorage.getItem('channelId');
-
     // console.log(this.channelId);
   }
 
@@ -349,9 +345,8 @@ export class VideoPostModalComponent implements OnInit, AfterViewInit {
     // const maxSize = 2*10^9;
     // const maxSize = 2147483648; //2GB
     const maxSize = 10737418240; //10GB
-
     if (event.target?.files?.[0].size < maxSize) {
-        this.fileSizeError = false
+      this.fileSizeError = false;
       if (event.target?.files?.[0].type.includes('video/mp4')) {
         this.postData.file1 = event.target?.files?.[0];
         this.selectedVideoFile = URL.createObjectURL(event.target.files[0]);
@@ -360,7 +355,7 @@ export class VideoPostModalComponent implements OnInit, AfterViewInit {
       } else {
         this.toastService.warring('please upload only mp4 files');
       }
-    }else{
+    } else {
       this.toastService.warring('Maximum video size allowed is 10 GB.');
       this.fileSizeError = true;
     }
@@ -391,7 +386,6 @@ export class VideoPostModalComponent implements OnInit, AfterViewInit {
   onChangeTag(event) {
     this.postData.keywords = event.target.value.replaceAll(' ', ',');
   }
-  
   selectChannel(channelId): void {
     this.channelId = channelId;
     console.log(this.channelId);

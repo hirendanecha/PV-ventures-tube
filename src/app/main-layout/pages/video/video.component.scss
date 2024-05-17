@@ -19,7 +19,6 @@
 // .single-video-comment-tabs{
 //   // border-radius: 12px;
 // }
-
 .header-text {
   font-size: 18px;
   color: var(--text-color);
@@ -141,5 +140,12 @@
       border: 1px solid var(--link-color);
       border-radius: 15px;
     }
+  }
+
+  .jw-controlbar .jw-button-image {
+    background-color: white !important;
+    border-radius: 7px !important;
+    height: 30px;
+    width: 34px;
   }
 }
