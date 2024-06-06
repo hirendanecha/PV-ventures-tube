@@ -18,8 +18,6 @@ export class ReplyCommentModalComponent implements AfterViewInit {
     url: '',
     tags: []
   };
-  selectedImage = ''
-
 
   commentMessageInputValue: string = ''
   commentMessageTags: any[];
